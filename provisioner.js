@@ -19,7 +19,7 @@ const management = new ManagementClient({
   clientSecret: event.secrets.clientSecret,
 });
 
-/** triggered if SSO doesnt return a users email with the claim token throw an error message */
+/** If IDP doesnt return a users email with the claim token throw an error message */
 if (event.user.email === undefined) {
   api.access.deny("Email from IDP not found.");
   //delete IDP user from auth0
@@ -82,6 +82,7 @@ else {
           management.linkUsers(userId, params, function (err, newUser) {
           if (err) {
             api.access.deny("Whoops, there was an error please try again later.");
+            api.redirect.sendUserTo(error500Url);
             console.log('linking error:', err)
             return;
           }
