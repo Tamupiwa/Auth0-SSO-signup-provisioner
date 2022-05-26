@@ -1,6 +1,6 @@
 # Auth0-SSO-invite-provisioner
-Auth0 Post login Actions script that prevents automatic signups from external Identity Providers (google, azure etc) unless 
-the user has an existing auth0 account.The script automatically deletes the newly created idenity if there is not an
+Auth0 Post login Actions script that prevents automatic signups from external Identity Providers (Google, Azure AD etc) unless 
+the user has an existing auth0 account.The script automatically deletes the newly created identity if there is not an
 existing (username-password) user with the same email in auth0. 
 
 If an existing user
