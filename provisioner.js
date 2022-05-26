@@ -7,6 +7,7 @@ log statements are included and can be viewed in the auth0 webtask log extension
 * @param {PostLoginAPI} api - Interface whose methods can be used to change the behavior of the login.
 */
 exports.onExecutePostLogin = async (event, api) => {
+//urls to your 403/500 error pages
 var error500Url = 'Your 500 error page';
 var error403Url = 'Your 403 error page';
 //array of your configured enterprise connection names
