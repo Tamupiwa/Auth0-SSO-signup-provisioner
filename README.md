@@ -9,7 +9,7 @@ exists, it automatically links them with the new IDP identity and keeps the exis
 
 This implementation can be tested using the 'webtask log' extension and running it in the actions sandbox.
 
-#Requirements
+## Requirements
 - Auth0 management API (auth0@2.40.0) must be in the auth0 actions dependency tab 
 - Read and Delete permissions for users must be enabled for the registered auth0 client
 - User linking extension should be disbabled as it is done automatically in the script
