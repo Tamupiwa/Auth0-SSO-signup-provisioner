@@ -1,11 +1,7 @@
 # Auth0-SSO-invite-provisioner
 Auth0 Post login Actions script that prevents automatic signups from external Identity Providers (Google, Azure AD etc) unless 
 the user has an existing auth0 account. The script automatically deletes the newly created identity if there is not an
-existing (username-password) user with the same email in auth0. 
-
-If an existing user
-exists, it automatically links them with the new IDP identity and keeps the existing auth0 user as the primary identity 
-(Note: this may not be secure depending on your use case)
+existing (username-password) user with the same email in auth0 and automatically links an existing user with the IDP identity.
 
 This implementation can be tested using the 'webtask log' extension and running it in the actions sandbox.
 
