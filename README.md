@@ -5,8 +5,8 @@ existing (username-password) user with the same email in auth0 and automatically
 
 This implementation can be tested using the 'webtask log' extension and running it in the actions sandbox.
 
-Note: Since this script runs post login, when a successful login occurs the user/app_metadata will not be available
-until the next login since the login with the new identity happens before the existing auth0 user and new user accounts are linked. 
+Note: When a successful login occurs, the users auth0 app/user metadata will not be available
+until the next login since the script is technically executed post login when the prelinked IDP idenity has already logged in. 
 
 ## Requirements
 - Auth0 management API (auth0@2.40.0) must be in the auth0 actions dependency tab 
