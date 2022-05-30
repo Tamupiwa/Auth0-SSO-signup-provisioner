@@ -10,5 +10,6 @@ until the next login since the script is technically executed post login when th
 
 ## Requirements
 - Auth0 management API (auth0@2.40.0) must be in the auth0 actions dependency tab 
-- Read and Delete permissions for users must be enabled for the registered auth0 client
+- Auth0 client must be setup with the user read, delete and link permissions
+- Auth0 client secret and client ID must be set up in the actions secrets tab
 - User linking extension should be disbabled as it is done automatically in the script
