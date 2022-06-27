@@ -16,8 +16,6 @@ log statements are included and can be viewed in the auth0 webtask log extension
 * @param {PostLoginAPI} api - Interface whose methods can be used to change the behavior of the login.
 */
 exports.onExecutePostLogin = async (event, api) => {
-  //all entperise connections setup/enabled
-  enterpriseConnections = []
 
   const ManagementClient = require('auth0').ManagementClient;
   const management = new ManagementClient({
@@ -57,7 +55,8 @@ exports.onExecutePostLogin = async (event, api) => {
       //since there is no other way for accounts to be created. (admin accounts are created manually, and invitee accounts are created when invite link is clicked
       let isInvitedOrExistingUser = user.identities.some(e => e.provider === "auth0" && e.connection == "Username-Password-Authentication");
       // returns array of all enabled enterprise SSO connections
-      let allSSOConnections = enterpriseConnections;
+      let connections = await management.getConnections();
+      let allSSOConnections = connections.filter(connection.name)
       // checks to see if the Azure/Google/SSO connection was used for this login
       let isSSOLogin = allSSOConnections.includes(event.connection.name);
 
