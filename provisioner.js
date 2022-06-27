@@ -3,13 +3,10 @@
   The following disables SSO logins/signups for users without an existing account/invite.
   It checks if user exists in auth0 with Username-Password-Authentication connection 
  (this means they were created via an invite by admin was an onboarded admin). 
-
+ 
+ 
  WARNING: The following code is run for after every auth0 login in the actions post-login script and includes 
  logic that can delete accounts so it should be changed cautiously. 
-
- Note: as of 2022-05-20 SSOOnly login provisioning is deprecated since users can now belong to
- different organizations using the same email so provisioning isnt possible (e.g facilities manager). 
-Code doesnt need to be modified as since the condition is never met or incase future requirements changed.
 
 log statements are included and can be viewed in the auth0 webtask log extension for testing
 
@@ -19,8 +16,6 @@ log statements are included and can be viewed in the auth0 webtask log extension
 * @param {PostLoginAPI} api - Interface whose methods can be used to change the behavior of the login.
 */
 exports.onExecutePostLogin = async (event, api) => {
-  //your redirect url
-  redirectUrl = 'https://www.yourredirecturl.com';
   //all entperise connections setup/enabled
   enterpriseConnections = []
 
