@@ -4,6 +4,8 @@
   It checks if user exists in auth0 with Username-Password-Authentication connection 
  (this means they were created via an invite by admin was an onboarded admin). 
  
+ NOTE: To significantly improve login speeds it is advised to replace the allSSOConnectins call 
+ with a hard coded array of the names of all your configured connections instead
  
  WARNING: The following code is run for after every auth0 login in the actions post-login script and includes 
  logic that can delete accounts so it should be changed cautiously. 
